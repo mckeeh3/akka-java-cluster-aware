@@ -3,7 +3,7 @@
 ### Installation and Running
 
 ~~~~bash
-git clone https://github.com/mckeeh3/akka-java-cluster.git
+git clone https://github.com/mckeeh3/akka-java-cluster-aware.git
 cd akka-java-cluster-aware
 mvn compile
 ~~~~
