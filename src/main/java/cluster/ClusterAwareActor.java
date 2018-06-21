@@ -30,11 +30,16 @@ class ClusterAwareActor extends AbstractLoggingActor {
         Member me = cluster.selfMember();
         log().debug("Tick {}", me);
 
-        for (Member member : cluster.state().getMembers()) {
+        cluster.state().getMembers().forEach(member -> {
             if (!me.equals(member) && member.status().equals(MemberStatus.up())) {
                 tick(member);
             }
-        }
+        });
+//        for (Member member : cluster.state().getMembers()) {
+//            if (!me.equals(member) && member.status().equals(MemberStatus.up())) {
+//                tick(member);
+//            }
+//        }
     }
 
     private void tick(Member member) {
