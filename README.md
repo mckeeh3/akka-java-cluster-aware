@@ -1,10 +1,33 @@
 ## Akka Java Cluster Example
 
+### Introduction
+
+This is a Java, Maven, Akka project that demonstrates how to setup a basic
+[Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html).
+
+This project is one in a series of projects that starts with a simple Akka Cluster project and progressively builds up to examples of event sourcing and command query responsibility segregation.
+
+The project series is composed of the following GitHub repos:
+* [akka-java-cluster](https://github.com/mckeeh3/akka-java-cluster)
+* [akka-java-cluster-aware](https://github.com/mckeeh3/akka-java-cluster-aware) (this project)
+* [akka-java-cluster-singleton](https://github.com/mckeeh3/akka-java-cluster-singleton)
+* [akka-java-cluster-sharding](https://github.com/mckeeh3/akka-java-cluster-sharding)
+* [akka-java-cluster-persistence](https://github.com/mckeeh3/akka-java-cluster-persistence)
+* [akka-java-cluster-persistence-query](https://github.com/mckeeh3/akka-java-cluster-persistence-query)
+
+Each project can be cloned, built, and runs independently of the other projects.
+
+This project contains an example implementation of a cluster. Here we will focus on cluster configuration and on running an Akka cluster with multiple nodes.
+
+### About Akka Clustering Awareness
+
+TODO
+
 ### Installation
 
 ~~~~bash
-git clone https://github.com/mckeeh3/akka-java-cluster.git
-cd akka-java-cluster
+git clone https://github.com/mckeeh3/akka-java-cluster-aware.git
+cd akka-java-cluster-aware
 mvn clean package
 ~~~~
 
