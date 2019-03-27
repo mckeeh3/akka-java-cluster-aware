@@ -104,7 +104,8 @@ class ClusterAwareActor extends AbstractLoggingActor {
 
             @Override
             public String toString() {
-                return String.format("%s[elapsed %.9fs, %dus]", getClass().getSimpleName(), (System.nanoTime() - pingTime) / 1000000000.0, pingTime);
+                final double elapsed = (System.nanoTime() - pingTime) / 1000000000.0;
+                return String.format("%s[elapsed %.9fs, %dus]", getClass().getSimpleName(), elapsed, pingTime);
             }
         }
     }
