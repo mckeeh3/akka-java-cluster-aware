@@ -205,7 +205,9 @@ private void tick(Member member) {
     actorSelection.tell(ping, self());
 }
 ~~~
-The next step performed builds what is called an actor selection, which is an Akka version of an actor URL. The final BIG step is completed in the last line of the method - `actorSelection.tell(ping, self());`. This single line of code tells the Akka actor system to send the ping object contents to the location specified in the actor selection. The resulting action is that the message is serialized, sent over the network to the destination node, deserialized, and then sent to the destination actor.
+The next step performed builds what is called an
+[actor selection](https://doc.akka.io/docs/akka/current/general/addressing.html#how-are-actor-references-obtained-),
+which is an Akka version of an actor URL. The final BIG step is completed in the last line of the method - `actorSelection.tell(ping, self());`. This single line of code tells the Akka actor system to send the ping object contents to the location specified in the actor selection. The resulting action is that the message is serialized, sent over the network to the destination node, deserialized, and then sent to the destination actor.
 
 In this case the actor that receives ping messages is an instance of this actor's class. Going back to the `createReceive` method we can see how incoming ping messages are handled.
 
@@ -216,9 +218,11 @@ private void ping(Message.Ping ping) {
 }
 ~~~
 
-Incoming ping messages are handled by the `ping(...)` method. When a ping message is received this method logs the incoming message object along with the sender location, which is an actor ref object, similar to an actor selection discussed above. More importantly, a pong message is sent back to the sender.
+Incoming ping messages are handled by the `ping(...)` method. When a ping message is received this method logs the incoming message object along with the sender location, which is an
+[actor reference](https://doc.akka.io/docs/akka/current/general/addressing.html#what-is-an-actor-reference-),
+similar to an actor selection discussed above. More importantly, a pong message is sent back to the sender.
 
-This actor aware implementation functions much like the chat app example we covered at the start of this section. However, this example is just the starting point, as previously discussed, there are much more interesting cluster-aware patterns, such as message distribution patterns.  
+This actor aware implementation functions much like the chat app example we covered at the start of this section. However, this example is just the starting point, as previously discussed, there are much more interesting cluster-aware patterns, such as message distribution patterns.
 
 ### Installation
 
