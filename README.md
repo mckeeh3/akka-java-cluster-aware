@@ -29,7 +29,7 @@ This example scenario is similar to the fundamental approach used by aware clust
 
 Message routing is the most common cluster-aware usage pattern. Messages sent to cluster-aware router actors are forwarded to other actors that are distributed across the cluster. For example, router actors work in conjunction with worker actors. Messages are sent that contains a worker identifier. These messages may be sent to any router actor. When a router actor receives each message, it looks at the id provided in the message to determine if the message belongs to one of the worker actors running on the same node as the router or if the worker for that identifier is located on another node. If the message is for a local actor, the router forwards it to the local worker. For messages that belong to remote workers, the router forwards the message to the remote router. The remote router goes through the same process. It looks at the message id to determine how the message should be routed.
 
-This project includes a simple cluster-aware actor that periodically sends ping messages and responds to ping messages with pong messages send back to the pinger. The key thing to understand that this messaging is happening between Akka cluster nodes, each node is running as a separate JVM, and the messages are sent over the network.
+This project includes a simple cluster-aware actor that periodically sends ping messages and responds to ping messages with pong messages sent back to the pinger. The key thing to understand that this messaging is happening between Akka cluster nodes, each node is running as a separate JVM, and the messages are sent over the network.
 
 ~~~java
 package cluster;
