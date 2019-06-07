@@ -3,7 +3,7 @@
 ### Introduction
 
 This is a Java, Maven, Akka project that demonstrates how to setup a basic
-[Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html).
+[Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html). In this project the focus is on cluster aware actors.
 
 This project is one in a series of projects that starts with a simple Akka Cluster project and progressively builds up to examples of event sourcing and command query responsibility segregation.
 
